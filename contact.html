@@ -231,32 +231,32 @@
     <div id="footer-placeholder"></div>
 
 <script>
-    // Laad de header
+    // 1. Header inladen
     fetch('header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
-
-            // SCROLL FUNCTIE STARTEN
-            window.onscroll = function() {
-                // Bereken percentage
+            
+            // 2. Scroll functie activeren
+            window.addEventListener('scroll', function() {
+                // Bereken hoe ver we zijn (0 tot 100)
                 let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
                 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 let scrolled = (winScroll / height) * 100;
 
-                // Zoek de elementen in de zojuist geladen header
+                // Zoek de elementen
                 let line = document.getElementById("vine-line-progress");
                 let tomato = document.getElementById("vine-tomato-mover");
 
-                // Beweeg ze!
+                // Pas de positie aan
                 if (line && tomato) {
                     line.style.width = scrolled + "%";
                     tomato.style.left = scrolled + "%";
                 }
-            };
+            });
         });
 
-    // Laad de footer
+    // 3. Footer inladen
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {

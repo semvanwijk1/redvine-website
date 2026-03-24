@@ -1,23 +1,29 @@
-<div id="rv-header-wrapper">
-    <div class="header-inner-box">
-        <a href="index.html" class="rv-logo-text">
-            <span class="rv-red">Red</span><span class="rv-green">Vine</span>
+<div id="rv-header-wrapper" style="width: 100%; position: fixed; top: 0; left: 0; background: #ffffff; z-index: 9999; border-bottom: 1px solid #eeeeee; font-family: 'Segoe UI', Arial, sans-serif;">
+    
+    <div class="header-inner-box" style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; height: 75px; padding: 0 20px;">
+        
+        <!-- Logo -->
+        <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: 900; text-transform: uppercase;">
+            <span style="color: #e31b23;">Red</span><span style="color: #2d6a4f;">Vine</span>
         </a>
 
-        <ul class="rv-nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="over-ons.html">Over ons</a></li>
-            <li><a href="assortiment.html">Assortiment</a></li>
-            <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
-            <li><a href="vacatures.html">Werken bij</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <!-- Menu (Geen puntjes, alles op één lijn) -->
+        <ul style="display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;">
+            <li style="list-style: none;"><a href="index.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Home</a></li>
+            <li style="list-style: none;"><a href="over-ons.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Over ons</a></li>
+            <li style="list-style: none;"><a href="assortiment.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Assortiment</a></li>
+            <li style="list-style: none;"><a href="duurzaamheid.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Duurzaamheid</a></li>
+            <li style="list-style: none;"><a href="vacatures.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Werken bij</a></li>
+            <li style="list-style: none;"><a href="contact.html" style="text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 13px; text-transform: uppercase;">Contact</a></li>
         </ul>
 
-        <div class="rv-lang-pill">🇳🇱 NL</div>
+        <!-- Taal -->
+        <div style="background: #e31b23; color: #ffffff; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 900;">🇳🇱 NL</div>
     </div>
 
-    <div class="vine-container">
-        <div id="vine-line-progress"></div>
-        <div id="vine-tomato-mover">🍅</div>
+    <!-- De Rank (Lijn) -->
+    <div style="width: 100%; height: 5px; background: #f4f4f4; position: relative;">
+        <div id="vine-line-progress" style="position: absolute; height: 100%; background: #2d6a4f; width: 0%; left: 0;"></div>
+        <div id="vine-tomato-mover" style="position: absolute; top: -12px; left: 0%; font-size: 22px; transform: translateX(-50%); line-height: 1; z-index: 10;">🍅</div>
     </div>
 </div>
