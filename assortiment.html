@@ -34,10 +34,19 @@
 
     <div id="footer-placeholder"></div>
 
-    <!-- De verwijzing die ze ophaalt -->
 <script>
-    fetch('header.html').then(res => res.text()).then(data => document.getElementById('header-placeholder').innerHTML = data);
-    fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    // Voeg 'components/' toe voor de bestandsnaam
+    fetch('components/header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+
+    fetch('components/footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 
 </body>
