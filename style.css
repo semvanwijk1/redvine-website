@@ -118,82 +118,77 @@ footer {
     margin-top: 60px;
 }
 
-/* --- DEFINITIEVE HEADER STYLING --- */
+/* Header Layout */
+.main-site-header { width: 100%; background: #fff; border-bottom: 1px solid #eee; position: fixed; top: 0; z-index: 999; }
+.header-inner { max-width: 1200px; margin: 0 auto; height: 70px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.site-logo { text-decoration: none; font-size: 22px; font-weight: 900; text-transform: uppercase; }
+.nav-list { display: flex; list-style: none; gap: 20px; }
+.nav-list a { text-decoration: none; color: #333; font-weight: 700; font-size: 13px; text-transform: uppercase; }
+.lang-badge { background: #e31b23; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 12px; }
 
-#rv-header-wrapper {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #ffffff;
-    z-index: 9999;
-    border-bottom: 1px solid #eeeeee;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
+/* Footer Layout */
+.site-footer { background: #111; color: #fff; padding: 40px 0 20px; margin-top: 50px; }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.footer-grid ul { list-style: none; padding: 0; }
+.footer-grid a { color: #ccc; text-decoration: none; }
+.footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; color: #666; }
 
-.header-inner-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 75px;
-    padding: 0 20px;
-}
+/* Ruimte voor de header */
+body { padding-top: 70px; }
 
-.rv-logo-text {
+/* Logo */
+.site-logo {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
+.t-red { color: #e31b23; }
+.t-green { color: #2d6a4f; }
 
-.rv-red { color: #e31b23; }
-.rv-green { color: #2d6a4f; }
-
-.rv-nav-list {
+/* Navigatie */
+.nav-list {
     display: flex;
+    list-style: none;
     gap: 25px;
-    list-style: none; /* Verwijdert de puntjes */
     margin: 0;
     padding: 0;
 }
 
-.rv-nav-list li {
-    list-style: none;
-}
-
-.rv-nav-list a {
-    text-decoration: none; /* Verwijdert de blauwe streep */
-    color: #1a1a1a;
+.nav-list a {
+    text-decoration: none;
+    color: #333;
     font-weight: 700;
     font-size: 13px;
     text-transform: uppercase;
-    white-space: nowrap;
+    transition: color 0.3s;
 }
 
-.rv-nav-list a:hover {
+.nav-list a:hover {
     color: #e31b23;
 }
 
-.rv-lang-pill {
+/* Taal Badge */
+.lang-badge {
     background: #e31b23;
-    color: #ffffff;
+    color: white;
     padding: 6px 12px;
     border-radius: 4px;
+    font-weight: 800;
     font-size: 12px;
-    font-weight: 900;
 }
 
-/* DE RANK EN TOMAAT */
+/* De bewegende Tomaat en Lijn */
 .vine-container {
     width: 100%;
-    height: 5px;
-    background: #f4f4f4;
+    height: 4px;
+    background: #f0f0f0;
     position: relative;
 }
 
-#vine-line-progress {
+.vine-line {
     position: absolute;
     height: 100%;
     background: #2d6a4f;
@@ -201,12 +196,13 @@ footer {
     left: 0;
 }
 
-#vine-tomato-mover {
+.rolling-tomato {
     position: absolute;
     top: -12px;
     left: 0%;
     font-size: 22px;
     transform: translateX(-50%);
     line-height: 1;
-    z-index: 10;
+    z-index: 20;
+    transition: left 0.1s linear;
 }
