@@ -1,167 +1,119 @@
-<!-- REDVINE ULTRA-MODERN HEADER -->
+<!-- REDVINE VINE-TRACK HEADER -->
 <style>
+    /* Kleurenpalet & Variabelen */
     :root {
-        --header-width: 96%;
-        --glass-bg: rgba(255, 255, 255, 0.75);
-        --glass-border: rgba(255, 255, 255, 0.4);
+        --red: #e31b23;
+        --green: #2d6a4f;
+        --white: #ffffff;
+        --dark: #1a1a1a;
     }
 
-    /* Zwevende Pill-vorm Header */
-    .ultra-header {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: var(--header-width);
-        height: 80px;
-        background: var(--glass-bg);
-        backdrop-filter: blur(15px) saturate(180%);
-        -webkit-backdrop-filter: blur(15px) saturate(180%);
-        border: 1px solid var(--glass-border);
-        border-radius: 100px;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        padding: 0 40px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Krimpen bij scrollen voor extra modern effect */
-    .ultra-header.scrolled {
-        top: 10px;
-        height: 65px;
-        width: 90%;
-        background: rgba(255, 255, 255, 0.9);
-    }
-
-    .nav-container {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
+    /* Header basis: Niet zwevend, gewoon strak bovenaan */
+    .main-header {
         width: 100%;
+        background-color: var(--white);
+        border-bottom: 1px solid #eee;
+        position: sticky; /* Blijft bovenin staan tijdens scrollen */
+        top: 0;
+        z-index: 9999;
+        font-family: 'Segoe UI', sans-serif;
     }
 
-    /* Logo Animatie */
-    .logo {
-        font-size: 1.4rem;
-        font-weight: 900;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--primary-red);
-        text-decoration: none;
+    /* De bovenste balk met Logo en Menu */
+    .header-top {
+        max-width: 1400px; /* Lekker breed */
+        margin: 0 auto;
+        padding: 20px 40px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
     }
 
-    .logo-dot {
-        width: 8px;
-        height: 8px;
-        background: var(--accent-green);
-        border-radius: 50%;
-        display: inline-block;
-        animation: pulse 2s infinite;
+    /* Logo Styling */
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
+    .logo .red-text { color: var(--red); }
+    .logo .green-text { color: var(--green); }
 
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.5); opacity: 0.5; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-
-    /* Navigatie Links */
+    /* Navigatie Menu */
     .nav-links {
         display: flex;
-        gap: 30px;
         list-style: none;
+        gap: 30px;
         margin: 0;
         padding: 0;
     }
 
     .nav-links a {
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--text-dark);
         text-decoration: none;
-        position: relative;
+        color: var(--dark);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
         transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-        color: var(--primary-red);
+        color: var(--red);
     }
 
-    /* De Bewegende Tomaat Area */
-    .interactive-area {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 20px;
+    /* Taal selector rechts */
+    .lang-box {
+        background: var(--red);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: 800;
+        font-size: 0.8rem;
     }
 
-    /* DE SCROLL-TOMAAT */
-    .tomato-wrapper {
+    /* DE VINE-TRACK: De groene lijn onderaan de header */
+    .vine-track {
+        width: 100%;
+        height: 4px;
+        background: #f0f0f0; /* De "ongebruikte" rank */
         position: relative;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
-    .rolling-tomato {
-        font-size: 24px;
-        display: inline-block;
-        transition: transform 0.1s linear; /* Ultra-vloeiend */
-        user-select: none;
-        cursor: grab;
-    }
-
-    /* De "Vine" Progress Bar onderaan de header */
-    .scroll-vine-bar {
+    /* De actieve groene rank die groeit */
+    .vine-progress {
         position: absolute;
-        bottom: 15px;
-        left: 50px;
-        right: 50px;
-        height: 2px;
-        background: rgba(45, 106, 79, 0.1);
-        border-radius: 2px;
-        overflow: hidden;
-    }
-
-    .scroll-progress {
-        width: 0%;
         height: 100%;
-        background: var(--accent-green);
+        background: var(--green);
+        width: 0%; /* Begint bij 0 */
         transition: width 0.1s linear;
     }
 
-    /* Taal Selector */
-    .lang-pill {
-        background: var(--text-dark);
-        color: white;
-        padding: 6px 15px;
-        border-radius: 50px;
-        font-size: 0.75rem;
-        font-weight: 800;
+    /* DE BEWEGENDE TOMAAT: Gekoppeld aan de scroll */
+    .vine-tomato {
+        position: absolute;
+        top: -12px; /* Plaatst de tomaat precies OP de lijn */
+        left: 0%; /* Begint links */
+        font-size: 24px;
+        transform: translateX(-50%); /* Zorgt dat het midden van de tomaat op de lijn staat */
+        transition: left 0.1s linear;
+        user-select: none;
     }
 
-    @media (max-width: 1024px) {
+    /* Responsive: menu weg op mobiel */
+    @media (max-width: 900px) {
         .nav-links { display: none; }
     }
 </style>
 
-<header class="ultra-header" id="main-header">
-    <div class="nav-container">
-        <!-- Links: Logo -->
+<header class="main-header">
+    <div class="header-top">
+        <!-- Logo -->
         <a href="index.html" class="logo">
-            RedVine <span class="logo-dot"></span>
+            <span class="red-text">Red</span><span class="green-text">Vine</span>
         </a>
 
-        <!-- Midden: Navigatie -->
+        <!-- Menu -->
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="over-ons.html">Over ons</a></li>
@@ -171,45 +123,29 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <!-- Rechts: Interactie & Taal -->
-        <div class="interactive-area">
-            <div class="tomato-wrapper">
-                <span class="rolling-tomato" id="header-tomato">🍅</span>
-            </div>
-            <div class="lang-pill">🇳🇱 NL</div>
-        </div>
+        <!-- Taal -->
+        <div class="lang-box">🇳🇱 NL</div>
     </div>
 
-    <!-- De Groeiende Rank (Progress bar) -->
-    <div class="scroll-vine-bar">
-        <div class="scroll-progress" id="vine-progress"></div>
+    <!-- De Rank (De lijn waar de tomaat op rijdt) -->
+    <div class="vine-track">
+        <div class="vine-progress" id="progressLine"></div>
+        <div class="vine-tomato" id="movingTomato">🍅</div>
     </div>
 </header>
 
 <script>
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('main-header');
-        const tomato = document.getElementById('header-tomato');
-        const vine = document.getElementById('vine-progress');
-        
-        // 1. Header krimpen bij scroll
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    // We gebruiken 'scroll' om de tomaat over de lijn te jagen
+    window.onscroll = function() {
+        // Bereken hoe ver de gebruiker heeft gescrold in procenten
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
 
-        // 2. Tomaat rotatie berekenen
-        // De tomaat draait op basis van de scroll-positie
-        let rotation = window.scrollY * 0.5; 
-        tomato.style.transform = `rotate(${rotation}deg)`;
-
-        // 3. Progress bar (Vine) berekenen
-        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (window.scrollY / windowHeight) * 100;
-        vine.style.width = scrolled + '%';
+        // Update de breedte van de groene rank
+        document.getElementById("progressLine").style.width = scrolled + "%";
         
-        // 4. Optioneel: Tomaat laten "stuiteren" bij scroll stop
-        tomato.style.marginBottom = (Math.sin(window.scrollY / 10) * 5) + "px";
-    });
+        // Update de positie van de tomaat
+        document.getElementById("movingTomato").style.left = scrolled + "%";
+    };
 </script>
