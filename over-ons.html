@@ -3,11 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ontdek het verhaal van RedVine. Onze passie voor tomaten en de mensen die elke dag werken aan de beste kwaliteit.">
+    <meta name="description" content="Ontdek het verhaal van RedVine. Onze passie voor tomaten, onze drie generaties aan ervaring en onze visie op de toekomst van de glastuinbouw.">
     <title>Over ons | RedVine</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specifieke stijlen voor deze pagina om witruimte te breken */
+        .stats-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .stat-item h2 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+        .timeline {
+            border-left: 3px solid var(--accent-green);
+            margin-left: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-green);
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="container">
             <nav>
@@ -26,21 +67,128 @@
     </header>
 
     <main>
+        <!-- Introductie Sectie -->
         <section class="container">
-            <h2>Het Verhaal van RedVine</h2>
-            <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                 <div>
-                    <p>RedVine is niet zomaar een kwekerij; het is het resultaat van drie generaties vakmanschap in de glastuinbouw. Wat begon als een klein familiebedrijf, is uitgegroeid tot een modern en innovatief bedrijf in het hart van het Westland.</p>
+                    <h1 style="color: var(--primary-red); margin-bottom: 20px;">Het Verhaal van RedVine</h1>
+                    <p>RedVine is niet zomaar een kwekerij; het is het resultaat van drie generaties vakmanschap in de glastuinbouw. Wat begon als een klein familiebedrijf in 1965, is uitgegroeid tot een van de meest innovatieve spelers in het hart van het Westland.</p>
                     <br>
                     <p>Onze missie is simpel: de lekkerste en gezondste tomaten kweken met respect voor mens en natuur. Wij geloven dat technologie de natuur kan versterken, niet vervangen. Daarom investeren we continu in precisielandbouw en data-gedreven kweekmethodes.</p>
                 </div>
-                <div style="background: var(--bg-alt); height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                    <span style="color: var(--accent-green); font-style: italic;">[Foto van de familie/kwekerij]</span>
+                <div style="background: var(--bg-alt); height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid #eee;">
+                    <span style="color: var(--accent-green); font-style: italic;">[Foto: Familiebedrijf in de kas]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kernwaarden Sectie (Vult de breedte en geeft visuele prikkels) -->
+        <section style="background-color: var(--bg-alt); padding: 80px 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Onze Kernwaarden</h2>
+                <div class="grid">
+                    <div class="card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">👨‍👩-</div>
+                        <h3>Familiegevoel</h3>
+                        <p>Korte lijnen en persoonlijke aandacht voor ons team en onze partners staan centraal.</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">🔬</div>
+                        <h3>Innovatie</h3>
+                        <p>We gebruiken de nieuwste technieken om de smaak en kwaliteit constant te verbeteren.</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">🌍</div>
+                        <h3>Integriteit</h3>
+                        <p>Eerlijk telen met een transparant proces, van zaadje tot aan het schap in de winkel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistieken Bar -->
+        <div class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h2>55+</h2>
+                        <p>Jaar Ervaring</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>12M</h2>
+                        <p>Tomaten per Jaar</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>100%</h2>
+                        <p>CO2 Neutraal</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>45</h2>
+                        <p>Gedreven Collega's</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historie / Tijdlijn Sectie -->
+        <section class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+                <div>
+                    <h2 style="margin-bottom: 30px;">Onze Reis door de Tijd</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>1965 - De Oprichting</h4>
+                            <p>Grootvader van der Linde start met de eerste houten kas voor trostomaten.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>1992 - Modernisering</h4>
+                            <p>De overstap naar de eerste moderne glazen kas en computergestuurde watergift.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2015 - RedVine Merknaam</h4>
+                            <p>Introductie van de naam RedVine en focus op premium smaakrassen.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Vandaag - Marktleders</h4>
+                            <p>Een volledig duurzame kwekerij die levert aan de beste retailers in Europa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div style="padding: 40px; border: 2px dashed var(--accent-green); border-radius: 8px;">
+                        <h3 style="color: var(--accent-green);">Klaar voor de toekomst</h3>
+                        <p>Wij blijven groeien en innoveren. Elke dag zoeken we naar manieren om onze tomaten nóg lekkerder te maken met nog minder impact op de planeet.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Footer herhaalt op elke pagina (voor de beknoptheid hier niet volledig uitgeschreven) -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: var(--primary-red); margin-bottom: 15px;">RedVine</h3>
+                    <p>De toekomst van de glastuinbouw begint hier. Kwaliteit, innovatie en passie voor het vak.</p>
+                </div>
+                <div>
+                    <h4>Navigatie</h4>
+                    <ul>
+                        <li><a href="over-ons.html">Over ons</a></li>
+                        <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
+                        <li><a href="vacatures.html">Werken bij</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Dorpstraat 123<br>Westland, Nederland</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 RedVine Tomatenkwekerij. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
