@@ -53,7 +53,7 @@ ul {
 }
 
 section {
-    padding: 80px 0;
+    padding: 80px 0 40px 0;
 }
 
 /* Header & Navigatie */
@@ -85,6 +85,9 @@ nav {
     display: flex;
     gap: 25px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -182,7 +185,7 @@ nav {
 footer {
     background-color: var(--text-dark);
     color: var(--white);
-    padding: 60px 0 20px;
+    padding: 30px 0 20px;
 }
 
 .footer-grid {
