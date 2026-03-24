@@ -1,0 +1,227 @@
+/* 
+   REDVINE - Central Stylesheet
+   Design: Modern, Clean, Tomato-inspired
+*/
+
+:root {
+    --primary-red: #e31b23; /* Tomaatrood */
+    --accent-green: #2d6a4f; /* Bladgroen */
+    --bg-light: #ffffff;
+    --bg-alt: #f4f4f4;
+    --text-dark: #1a1a1a;
+    --text-muted: #4a4a4a;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+    --max-width: 1200px;
+    --header-height: 80px;
+}
+
+/* Reset & Basis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Lay-out containers */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Header & Navigatie */
+header {
+    background-color: var(--white);
+    height: var(--header-height);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-red);
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--bg-alt);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+}
+
+/* Knoppen */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #c4161d;
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-green);
+    color: var(--white);
+}
+
+/* Grids */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--accent-green);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--primary-red);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Formulier */
+.contact-form {
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* In productie zou hier een hamburger menu komen */
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
