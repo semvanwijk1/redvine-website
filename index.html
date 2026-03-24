@@ -9,29 +9,7 @@
 </head>
 <body>
 
-    <header>
-    <div class="container" style="width: 100%;">
-        <nav>
-            <!-- Links: Logo -->
-            <a href="index.html" class="logo">RedVine</a>
-
-            <!-- Midden: Navigatie -->
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="assortiment.html">Assortiment</a></li>
-                <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
-                <li><a href="vacatures.html">Vacatures</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <!-- Rechts: Taal -->
-            <div class="lang-selector-wrapper">
-                <div class="lang-selector">🇳🇱 NL</div>
-            </div>
-        </nav>
-    </div>
-</header>
+    <div id="header-placeholder"></div>
 
     <main>
         <!-- Hero Sectie -->
@@ -80,56 +58,23 @@
         </section>
     </main>
 
-    <!-- Verbeterde Strakke Footer (3 kolommen) -->
-    <footer style="background-color: #111; color: #fff; padding: 80px 0 30px 0;">
-        <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
-                
-                <!-- Kolom 1: Merk (Breder opgezet) -->
-                <div>
-                    <h3 style="color: var(--primary-red); font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">RedVine</h3>
-                    <p style="color: #999; font-size: 1rem; line-height: 1.8; max-width: 450px;">
-                        Toonaangevende trostomatenkwekerij uit het Westland. Wij focussen op innovatie, duurzaamheid en de allerbeste smaakbeleving voor consumenten wereldwijd. Sinds 1965 bouwen wij aan de toekomst van de glastuinbouw.
-                    </p>
-                </div>
+    <div id="footer-placeholder"></div>
 
-                <!-- Kolom 2: Snelmenu -->
-                <div>
-                    <h4 style="margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white);">Navigatie</h4>
-                    <ul style="line-height: 2.5; font-size: 0.95rem;">
-                        <li><a href="over-ons.html" style="color: #ccc; transition: 0.3s;">Over ons verhaal</a></li>
-                        <li><a href="assortiment.html" style="color: #ccc; transition: 0.3s;">Ons assortiment</a></li>
-                        <li><a href="duurzaamheid.html" style="color: #ccc; transition: 0.3s;">Duurzaamheid</a></li>
-                        <li><a href="vacatures.html" style="color: #ccc; transition: 0.3s;">Werken bij RedVine</a></li>
-                        <li><a href="contact.html" style="color: #ccc; transition: 0.3s;">Contact</a></li>
-                    </ul>
-                </div>
+<script>
+    // Haal de header op uit het mapje components
+    fetch('/components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
 
-                <!-- Kolom 3: Contact & Locatie -->
-                <div>
-                    <h4 style="margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white);">Contact</h4>
-                    <p style="color: #ccc; font-size: 0.95rem; line-height: 1.8;">
-                        <strong style="color: var(--white);">Hoofdkantoor</strong><br>
-                        Dorpstraat 123<br>
-                        2671 AB Westland<br><br>
-                        <strong style="color: var(--white);">Direct contact</strong><br>
-                        <span style="color: var(--primary-red);">E:</span> info@redvine.nl<br>
-                        <span style="color: var(--primary-red);">T:</span> +31 (0)174 123 456
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Copyright Bar -->
-            <div style="border-top: 1px solid #222; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #666;">
-                <p>&copy; 2024 RedVine Tomatenkwekerij. Alle rechten voorbehouden.</p>
-                <div style="display: flex; gap: 30px;">
-                    <a href="#" style="color: #666; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: #666; text-decoration: none;">Algemene Voorwaarden</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    // Haal de footer op uit het mapje components
+    fetch('/components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 
 </body>
 </html>

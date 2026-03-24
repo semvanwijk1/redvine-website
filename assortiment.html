@@ -8,29 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <div class="container" style="width: 100%;">
-        <nav>
-            <!-- Links: Logo -->
-            <a href="index.html" class="logo">RedVine</a>
 
-            <!-- Midden: Navigatie -->
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="over-ons.html">Over ons</a></li>
-                <li><a href="assortiment.html">Assortiment</a></li>
-                <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
-                <li><a href="vacatures.html">Vacatures</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <!-- Rechts: Taal -->
-            <div class="lang-selector-wrapper">
-                <div class="lang-selector">🇳🇱 NL</div>
-            </div>
-        </nav>
-    </div>
-</header>
+    <div id="header-placeholder"></div>
 
     <main class="container" style="padding: 60px 20px;">
         <h2 style="margin-bottom: 40px;">Onze Tomaten</h2>
@@ -52,5 +31,24 @@
             </div>
         </div>
     </main>
+
+    <div id="footer-placeholder"></div>
+
+<script>
+    // Haal de header op uit het mapje components
+    fetch('/components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+
+    // Haal de footer op uit het mapje components
+    fetch('/components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
 </body>
 </html>
