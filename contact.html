@@ -3,184 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact opnemen met RedVine? Vind hier onze adresgegevens of stuur ons direct een bericht via het formulier.">
+    <meta name="description" content="Contact opnemen met RedVine? Vind hier onze adresgegevens of stuur ons direct een bericht.">
     <title>Contact | RedVine</title>
-    
-    <!-- Link naar je basis style.css (voor header/footer) -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* EXTRA STYLING SPECIFIEK VOOR DEZE PAGINA OM HET DESIGN TE GARANDEREN */
-        :root {
-            --primary-red: #e31b23;
-            --accent-green: #2d6a4f;
-            --text-dark: #1a1a1a;
-            --text-muted: #4a4a4a;
-            --white: #ffffff;
-            --bg-alt: #fcfcfc;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Twee gelijke kolommen naast elkaar */
-            gap: 80px; /* Ruimte tussen de kolommen */
-            align-items: start;
-        }
-
-        /* Linkerkant: Info & Kaart */
-        .info-section h1 {
-            font-size: 3rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .contact-details {
-            margin-bottom: 40px;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .detail-item .icon-circle {
-            background: #fff0f0;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.2rem;
-        }
-
-        .detail-item h4 {
-            margin: 0;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .detail-item p {
-            margin: 0;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .map-box {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Maakt de kaart perfect vierkant */
-            background: #eee;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #eee;
-        }
-
-        /* Rechterkant: Het Formulier */
-        .form-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid #f0f0f0;
-        }
-
-        .form-card h3 {
-            margin-bottom: 25px;
-            font-size: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            box-sizing: border-box; /* Zorgt dat padding binnen de breedte valt */
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-red);
-            background: #fff;
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: var(--primary-red);
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #c4161d;
-        }
-
-        /* Responsive: onder elkaar op mobiel */
-        @media (max-width: 900px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-    </style>
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <nav style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
-                <a href="index.html" class="logo" style="color: var(--primary-red); font-weight: 800; text-decoration: none; font-size: 1.5rem;">REDVINE</a>
-                <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
-                    <li><a href="index.html" style="text-decoration: none; color: var(--text-dark);">Home</a></li>
-                    <li><a href="over-ons.html" style="text-decoration: none; color: var(--text-dark);">Over ons</a></li>
-                    <li><a href="assortiment.html" style="text-decoration: none; color: var(--text-dark);">Assortiment</a></li>
-                    <li><a href="duurzaamheid.html" style="text-decoration: none; color: var(--text-dark);">Duurzaamheid</a></li>
-                    <li><a href="vacatures.html" style="text-decoration: none; color: var(--text-dark);">Vacatures</a></li>
-                    <li><a href="contact.html" style="text-decoration: none; color: var(--primary-red); font-weight: bold;">Contact</a></li>
-                </ul>
+    <div class="container" style="width: 100%;">
+        <nav>
+            <!-- Links: Logo -->
+            <a href="index.html" class="logo">RedVine</a>
+
+            <!-- Midden: Navigatie -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="over-ons.html">Over ons</a></li>
+                <li><a href="assortiment.html">Assortiment</a></li>
+                <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
+                <li><a href="vacatures.html">Vacatures</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Rechts: Taal -->
+            <div class="lang-selector-wrapper">
                 <div class="lang-selector">🇳🇱 NL</div>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </nav>
+    </div>
+</header>
 
     <main class="contact-container">
         
