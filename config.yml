@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "vacatures_overzicht"
+    label: "Vacatures"
+    files:
+      - label: "Alle Vacatures"
+        name: "vacatures"
+        file: "data/vacatures.json"
+        fields:
+          - label: "Lijst met vacatures"
+            name: "vacature_lijst"
+            widget: "list"
+            fields:
+              - {label: "Functietitel", name: "title", widget: "string"}
+              - {label: "Salarisindicatie", name: "salaris", widget: "string"}
+              - {label: "Korte Omschrijving", name: "omschrijving", widget: "text"}
