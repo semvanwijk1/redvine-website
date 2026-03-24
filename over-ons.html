@@ -152,15 +152,33 @@
     <div id="footer-placeholder"></div>
 
 <script>
-    // Haal de header op uit het mapje components
-    fetch('/components/header.html')
+    // Laad de header
+    fetch('header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
+
+            // SCROLL FUNCTIE STARTEN
+            window.onscroll = function() {
+                // Bereken percentage
+                let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                let scrolled = (winScroll / height) * 100;
+
+                // Zoek de elementen in de zojuist geladen header
+                let line = document.getElementById("vine-line-progress");
+                let tomato = document.getElementById("vine-tomato-mover");
+
+                // Beweeg ze!
+                if (line && tomato) {
+                    line.style.width = scrolled + "%";
+                    tomato.style.left = scrolled + "%";
+                }
+            };
         });
 
-    // Haal de footer op uit het mapje components
-    fetch('/components/footer.html')
+    // Laad de footer
+    fetch('footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
