@@ -32,30 +32,102 @@
     </div>
 </header>
 
-    <main class="container" style="padding: 60px 20px;">
-        <div class="grid">
-            <div>
-                <h2>Contactgegevens</h2>
-                <p style="margin: 20px 0;">Heeft u vragen over onze producten of wilt u een afspraak maken? Neem contact op.</p>
-                <p><strong>Adres:</strong> Dorpstraat 123, 2671 AB Westland</p>
-                <p><strong>Email:</strong> info@redvine-tomaten.nl</p>
-                <p><strong>Tel:</strong> +31 (0)174 123 456</p>
+    <main class="container" style="padding: 80px 20px;">
+        <div class="contact-grid">
+            
+            <!-- Linkerzijde: Tekst & Kaart -->
+            <div class="contact-info">
+                <span style="color: var(--accent-green); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Direct contact</span>
+                <h2 style="font-size: 2.5rem; margin: 15px 0 25px 0;">Laat van u horen</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">Heeft u vragen over onze tomaten, wilt u een zakelijke samenwerking starten of een bezoek brengen aan onze kwekerij? Ons team staat voor u klaar.</p>
                 
-                <div style="margin-top: 30px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39257.65345914614!2d4.172909743048596!3d51.99596464522933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b6b15822f08d%3A0x6b40bd06915152eb!2sNaaldwijk!5e0!3m2!1snl!2snl!4v1711267890123!5m2!1snl!2snl" width="100%" height="250" style="border:0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h4>Locatie</h4>
+                            <p>Dorpstraat 123, 2671 AB Westland</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon">✉️</div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>info@redvine-tomaten.nl</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon">📞</div>
+                        <div>
+                            <h4>Telefoon</h4>
+                            <p>+31 (0)174 123 456</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vierkante Google Map -->
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39257.65345914614!2d4.172909743048596!3d51.99596464522933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b6b15822f08d%3A0x6b40bd06915152eb!2sNaaldwijk!5e0!3m2!1snl!2snl!4v1711267890123!5m2!1snl!2snl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             
-            <div class="card">
-                <h3>Stuur ons een bericht</h3>
+            <!-- Rechterzijde: Modern Formulier -->
+            <div class="contact-card">
+                <h3>Stuur een bericht</h3>
                 <form class="contact-form">
-                    <input type="text" placeholder="Naam" required>
-                    <input type="email" placeholder="E-mailadres" required>
-                    <textarea rows="5" placeholder="Uw bericht" required></textarea>
-                    <button type="submit" class="btn btn-primary">Verstuur bericht</button>
+                    <div class="form-group">
+                        <label>Volledige naam</label>
+                        <input type="text" placeholder="Bijv. Jan Jansen" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mailadres</label>
+                        <input type="email" placeholder="uw@email.nl" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Onderwerp</label>
+                        <input type="text" placeholder="Waar gaat uw vraag over?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Uw bericht</label>
+                        <textarea placeholder="Vertel ons hoe we u kunnen helpen..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1rem; margin-top: 10px;">Verstuur aanvraag</button>
                 </form>
             </div>
+
         </div>
     </main>
+
+    <footer style="background-color: #111; color: #fff; padding: 80px 0 30px 0;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
+                <div>
+                    <h3 style="color: var(--primary-red); font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">RedVine</h3>
+                    <p style="color: #999; font-size: 1rem; line-height: 1.8; max-width: 450px;">Toonaangevende trostomatenkwekerij uit het Westland. Sinds 1965 bouwen wij aan de toekomst van de glastuinbouw.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Navigatie</h4>
+                    <ul style="line-height: 2.5; font-size: 0.95rem;">
+                        <li><a href="over-ons.html" style="color: #ccc;">Over ons verhaal</a></li>
+                        <li><a href="assortiment.html" style="color: #ccc;">Ons assortiment</a></li>
+                        <li><a href="duurzaamheid.html" style="color: #ccc;">Duurzaamheid</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Contact</h4>
+                    <p style="color: #ccc; font-size: 0.95rem; line-height: 1.8;">
+                        Dorpstraat 123<br>
+                        2671 AB Westland<br>
+                        <span style="color: var(--primary-red);">T:</span> +31 (0)174 123 456
+                    </p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #222; padding-top: 30px; text-align: center; font-size: 0.85rem; color: #666;">
+                <p>&copy; 2024 RedVine Tomatenkwekerij. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
